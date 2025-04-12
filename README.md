@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+
+![alt text](image.png)
 # Uptime Monitoring System (DevOps Assessment)
 
 This project is a complete uptime monitoring system  for a DevOps assessment task.  
