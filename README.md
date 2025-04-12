@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Uptime Monitoring System (DevOps Assessment)
 
 This project is a complete uptime monitoring system  for a DevOps assessment task.  
@@ -70,3 +71,4 @@ Reads uptime data from:
      |
      v
 Amazon S3 Bucket (stores uptime JSON results)
+=======
