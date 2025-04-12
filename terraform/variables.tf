@@ -7,7 +7,7 @@ variable "project_name" {
 }
 
 variable "github_owner" {
-  default = "alifadel1111"
+  default = "alifadel111"
 }
 
 variable "github_repo" {
