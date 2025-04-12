@@ -72,3 +72,24 @@ Reads uptime data from:
      v
 Amazon S3 Bucket (stores uptime JSON results)
 =======
+# instruction to run 
+To run the project locally:
+first clone the repository using `git clone https://github.com/alifadel111/agapiassesement.git` 
+go into the folder with `cd agapiassesement`.
+Then create a virtual environment using `python -m venv venv` and activate it with `source venv/bin/activate` (or `venv\Scripts\activate` on Windows).
+After that, install the dependencies by running `pip install -r requirements.txt`.
+
+Before running the app, make sure you have valid AWS credentials configured,since all results are uploaded directly to an S3 bucket (local file storage is not used but can be added as a result file). 
+Set the credentials using `export AWS_ACCESS_KEY_ID=your_key`, `export AWS_SECRET_ACCESS_KEY=your_secret`,
+ and `export AWS_DEFAULT_REGION=us-east-1`.
+
+Then run the app with `python run.py`.
+ This will start the uptime monitor and the FastAPI server on port 8000. You can test it by visiting `http://localhost:8000/uptime/google.com` or using curl.
+
+If you prefer to use Docker, build the image with `docker build -t uptime-monitor .` and run it with `docker run -p 8000:8000 uptime-monitor`.
+
+To deploy the full infrastructure to AWS,
+go to the terraform directory using `cd terraform`,
+initialize Terraform with `terraform init`,
+and apply it with `terraform apply`.
+This will provision all required AWS services including CodePipeline, CodeBuild, ECR, ECS Fargate, IAM roles, and the S3 bucket. The CI/CD pipeline will automatically build and deploy the app whenever changes are pushed to the main branch.
