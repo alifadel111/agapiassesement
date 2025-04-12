@@ -1,0 +1,9 @@
+{
+    "urls": [
+      "https://www.google.com",
+      "https://www.wikipedia.org",
+      "https://httpstat.us/503",      
+      "https://thisurldoesnotexist.com"
+    ]
+  }
+  
