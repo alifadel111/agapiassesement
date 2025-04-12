@@ -39,40 +39,6 @@ A full CI/CD pipeline is integrated using GitHub + AWS CodePipeline + CodeBuild 
 - CI/CD pipeline from GitHub to ECS via Terraform
 - ECS service behind a load balancer (ALB)
 
----
-## project arch
-
-GitHub Repo (agapiassesement)
-     |
-     | (Webhook Trigger)
-     v
-AWS CodePipeline
-     |
-     |----> Source Stage (from GitHub)
-     |
-     |----> CodeBuild (builds Docker image, pushes to ECR)
-     |
-     |----> (Optional future) Deploy stage
-     |
-     v
-Amazon ECR (holds built images)
-     |
-     v
-ECS Cluster (Fargate)
-     |
-     |--- Task Definition (uptime-container)
-     |
-     v
-ALB (Load Balancer) → port 80
-     |
-     v
-FastAPI App → responds on `/uptime/<website>`
-     |
-     v
-Reads uptime data from:
-     |
-     v
-Amazon S3 Bucket (stores uptime JSON results)
 =======
 # instruction to run 
 To run the project locally:
